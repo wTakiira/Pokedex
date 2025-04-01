@@ -1,11 +1,11 @@
 <template>
   <div class="list">
-    <article v-for="(pokemon, index) in filteredPokemons"
+    <button v-for="(pokemon, index) in filteredPokemons"
       :key="'poke' + index"
       @click="setPokemonUrl(pokemon.url)">
       <img :src="imageUrl + pokemon.id + '.png'" width="160" height="160" alt="">
       <h3>{{ pokemon.name }}</h3>
-    </article>
+  </button>
     <div id="scroll-trigger" ref="infinitescrolltrigger">
       <i class="fas fa-spinner fa-spin"></i>
     </div>
@@ -120,6 +120,16 @@ next() {
   grid-gap: 10px;
   width: 100%;
   max-width: 510px;
+}
+
+button {
+  height: 200px;
+  background-color: #efefef;
+  text-align: center;
+  text-transform: capitalize;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(0,0,0,.2), 0 10px 10px rgba(0,0,0,.2);
 }
 
 article {
